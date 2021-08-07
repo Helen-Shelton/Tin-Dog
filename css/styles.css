@@ -1,0 +1,275 @@
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+h1{
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+h2{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+h3{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Containers */
+.container-fluid{
+  padding: 7% 15%;
+}
+
+/* Sections */
+.coloured-section{
+  background-color: #ff4c68;
+  color: #fff;
+}
+
+.white-section{
+  background-color: #fff;
+}
+
+
+
+/* Navigation Bar */
+.navbar{
+  padding: 0 0 4.5rem;
+}
+.navbar-brand{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item{
+  padding: 0 18px;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+
+
+/* Title section */
+#title{
+  text-align: left;
+}
+
+#title .container-fluid{
+  padding: 3% 15% 7%;
+}
+/* Title Image */
+.title-im{
+  position: absolute;
+  transform: rotate(25deg);
+  width: 25%;
+  right: 15%;
+}
+/* Download Buttons */
+.dwnld-btn{
+  margin: 5% 3% 5% 0;
+}
+
+
+
+/* Features */
+#features{
+  position: relative;
+}
+
+.change-c:hover{
+  color: #ff4c68;
+}
+
+.feat-grid{
+  padding: 2rem;
+}
+
+.feat-icon{
+  /* change size */
+  color: #ef8172;
+  margin-bottom: 1rem;
+}
+
+.p-feat{
+  color: #8f8f8f;
+  font-size: 0.9rem;
+  font-weight: light;
+}
+
+
+/* Testimonials Section */
+#testimonials{
+  background-color: #ef8172;
+}
+
+.testimon-img{
+  width: 12%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+
+
+/* <!-- Press --> */
+#press{
+  background-color: #ef8172;
+  padding-bottom: 3%;
+}
+
+.press-img{
+  width: 15%;
+  margin: 20px 20px;
+}
+
+
+
+/* Pricing */
+#pricing{
+  padding: 100px;
+}
+
+.pricing-col{
+  padding: 3% 2%;
+}
+
+
+
+/* Media Query Breakpoint */
+@media (max-width: 991.5px){
+
+  #title{
+    text-align: center;
+  }
+
+  .title-im{
+    padding: None;
+    position: static;
+    transform: rotate(0);
+    width: 30%;
+  }
+}
+
+
+
+/* Call to Action */
+.cta-btn{
+  margin: 5% 3% 5% 0;
+}
+
+
+
+/* Footer */
+#footer{
+  color: #8f8f8f;
+}
+
+.foot-icon{
+  padding: 0% 1% 2% 1%;
+  color: black;
+}
+
+/*
+Visual Heirarchy: The bolder and larger the text, the more the viewers eye is drawn to it
+
+CSS Z-INDEX & STACKING ORDER
+many things affect the stacking order of elements on a webpage:
+1. POSITIONING oOF ELEMENTS:
+relative, static, absolute, fixed
+
+The positioning CANNOT be set to STATIC (which elements are by default), in order for the Z-index to have any affect on the element
+when set to absolute, those on top of the stack are at the bottom of the HTML file.
+However, we dont want to rely on HTML code for stacking order, which is why we use Z-index in CSS.
+
+2. NESTING
+nesting HTML elements in eachother will allow some elements to stack on top of one another
+think parent and child concept. Children sit on top of parent Elements
+
+3. Z-INDEX
+z-index: 1; (could use an index of 0,-1,10,-10, etc.)
+default index for all HTML elements is 0
+By using negatives we are putting it closer to the BOTTOM of the stack (away form the viewer)
+By using positives we are putting it closer to the TOP of the stack (closer to viewer)
+The z-index only works if the element is given a position property (not the default static positioning)
+
+Things to note:
+giving all html elements the same z-index reverts back to the original stacking order based on our HTML file order
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CSS MEDIA QUERY BREAKPOINTS
+Allows us to create responsive layouts depending on the size of the screen without using the CSS grid system
+Google-rankings are affected by whether your website is mobile friendly or not! so its good to make mobile responsive websites
+How to use:
+@media <type> <feature>
+example:
+@media screen (min-width: 900px){
+  h1{
+    font-size: 60px;
+  }
+}
+Could also use multiple conditions for breakpoint:
+@media screen (min-width: 900px) and (max-width: 1000px){
+  h1{
+    font-size: 60px;
+  }
+}
+3 different sizes to consider: Device (fixed), browser, viewport (size of the screen website is being desplayed on)
+***Note*** pay attn to hierarchy. Make sure the styles and selectors you are trying to change using the breakpoint
+      are children of the previous styles and selectors. Using @media does not establish a hierarchy!
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CODE REFACTORING
+Important things to consider:
+1.readability
+2.modularity - how easy it is to reuse code and narrow down parts of a code. ex finding a bug
+3.efficiency
+4.length - do not sacrifice length for readability or modularity
+
+note: sometimes we must repeat code for modularity. ex. its easier to give header tags multiple Classes
+that are specific to that header tag, in order for us to customize header tags without changing the formatting
+of other headers
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+COMBINING SELECTORS
+1. Multiple selectors
+ex.
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat-Bold";
+}
+
+2. Hierarchical Selectors
+First selector is from parent, second selector is from child. 2 types:
+A.
+Space in between selectors
+ex.
+#title .container-fluid{
+  padding: 3% 15% 7%;
+}
+B.
+No space inbetween selectors (selectors can't be hierarchical)
+ex.
+<h1 class="title">Goodbye World</h1>
+h1.title{
+  color: red;
+}
+This will target ALL h1's with the class title and make them red
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GOOD PRACTICES:
+Use ID selectors sparingly & Avoid applying In-line style code in HTML doc,
+hierarchy can get confusing otherwise.
+
+
+*/
