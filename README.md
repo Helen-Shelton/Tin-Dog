@@ -6,4 +6,5 @@ Developed Webpage using Bootstrap stylesheets and JavaScript scripts.
 Concepts used:
 
 Bootstrap Classes: Navbar, Card-stacks, Carousel, Buttons, Grid, Containers, and Z-Index
+
 CSS Concepts: Media Query Breakpoints, Combining Selectors (Multiple and Hierarchical)
