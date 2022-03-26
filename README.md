@@ -1,5 +1,7 @@
 # Tin-Dog
 
+Deployed to Heroku: https://helen-tindog.herokuapp.com/
+
 Website designed with the help of "The Complete 2021 Web Development Bootcamp" on Udemy. Credits go to Angela Yu, course instructor.
 
 Developed Webpage using Bootstrap stylesheets and JavaScript scripts.
